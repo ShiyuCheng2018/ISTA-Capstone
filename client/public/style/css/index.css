@@ -1,0 +1,70 @@
+/*homePage*/
+.category-list-btn{
+    color: rgba(27, 27, 27, 0.57);
+    font-family: "Roboto",Helvetica,sans-serif;
+}
+.category-list-btn:hover{
+    color: black;
+}
+/*end of homePage*//*homePage*/
+
+/*item cards*/
+.cards-section img{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transition: all 1.2s;
+}
+
+.cards-section img:hover{
+    transform: scale(1.2);
+}
+
+.cards-section .card{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+/*end of item cards*/
+
+/*end of home page*/
+
+/*sign in*/
+.signin{
+    position: relative;
+}
+
+.signin__bg{
+    height: 100%;
+    width: 100%;
+    background-image: url("../../assets/img/banners/auth.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #131313;
+    opacity: .5;
+    z-index: -99;
+}
+
+.signin .btn{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.signin .signin__container label{
+    color: white;
+}
+
+.signin .signin__container{
+    display: block;
+    padding: 1rem;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    opacity: 1 !important;
+    background-color: #141414;
+    border-radius: 1rem;
+}
+
+/*end of sign in*/

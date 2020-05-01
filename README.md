@@ -8,4 +8,5 @@
 
 
 ## 💻 Backend: Python | Django | SQL | aws
+####  Author: 👨🏻‍💻 Jiatian Wang (Python | Django | Database), 👨🏻‍💻 Tariq Oliver 
 #### 📂 Repo: https://github.com/KartinJulia/MonkeyDock

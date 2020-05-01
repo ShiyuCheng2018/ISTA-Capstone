@@ -1,11 +1,11 @@
 import React from 'react';
-import MainRouter from "../MainRouter";
+import {Link} from "react-router-dom";
 
 const Footer = () => (
     <div className="footer container-fluid bg-dark text-white p-0" style={{height: 'auto'}}>
         <div className="row m-0 p-2">
             <div className="col-md-4 col-12 mx-auto my-0">
-                <div className="row mx-4 mt-4"><h4>Max Tech</h4></div>
+                <Link to={"/"} className="row mx-4 mt-4 text-white" style={{ textDecoration: "none"}}><h4>Monkey Dock</h4></Link>
                 <div className="row mx-4"><p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
                     consectetur, adipisci velit..
                     Neque porro quisquam .Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>

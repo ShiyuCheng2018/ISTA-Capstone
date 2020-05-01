@@ -1,11 +1,14 @@
 import React from "react";
 import HomeNav from "./HomeNav";
+import HomeCategory from "../components/HomeCategory";
+import HomeProducts from "../components/HomeProductShow";
 
 
 const Home = () => (
     <>
         <HomeNav/>
-        <h1>This is Home page content</h1>
+        <HomeCategory/>
+        <HomeProducts/>
     </>
 );
 

@@ -10,6 +10,7 @@ class SignIn extends Component{
         this.state = {
             email: "",
             password: "",
+            name:"",
             error: "",
             redirectToReferer: false,
             loading: false
@@ -25,10 +26,15 @@ class SignIn extends Component{
     clickSubmit = (event) => {
         event.preventDefault();
         this.setState({loading: true});
-        const {email, password} = this.state;
+        const {email, password, name} = this.state;
         const user = {
             email,
-            password
+            password,
+            username: name,
+            "grant_type":"password",
+            "audience":"Test API",
+            "client_id":"iphone123",
+            "client_secret":"1234"
         };
 
         signIn(user)
@@ -41,7 +47,7 @@ class SignIn extends Component{
             })
     };
 
-    signInForm = (email, password)=>(
+    signInForm = (email, password, name)=>(
         <div className="container-fluid signin">
             <div className="signin__bg"></div>
             <div className="signin__container w-25">
@@ -60,6 +66,10 @@ class SignIn extends Component{
                             className="font-weight-bold">Google</span></button>
                         OR
                         <form>
+                            <div className="form-group">
+                                <label htmlFor="name">User name</label>
+                                <input id={'name'} name={'name'}  className={'form-control'} onChange={this.handleChange('name')} value={name}/>
+                            </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email address
                                     <Link className="" to={'/signup'}
@@ -86,7 +96,7 @@ class SignIn extends Component{
     );
 
     render(){
-        const {email, password, error, redirectToReferer, loading} = this.state;
+        const {email, password,name, error, redirectToReferer, loading} = this.state;
         if (redirectToReferer){
             return <Redirect to={'/'}/>
         }
@@ -95,8 +105,8 @@ class SignIn extends Component{
                 {/*validation*/}
                 <div className={"alert alert-danger"} style={{display:error ? "":"none"}}>{error}</div>
                 {/*end of validation*/}
-                {loading ? <div className={"jumbotron text-center"}><h2>loading....</h2></div> : ""}
-                {this.signInForm(email, password)}
+                {loading ? <div className={"jumbotron text-center m-0"}><h2>loading....</h2></div> : ""}
+                {this.signInForm(email, password, name)}
                 <Footer/>
             </>
         )

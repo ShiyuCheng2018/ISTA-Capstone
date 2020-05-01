@@ -7,9 +7,9 @@ const HomeNav = () => (
         <div class="container-fluid top-navigation border-bottom">
         <div class="row text-center">
             <div class="col-md-4 col p-0 ml-auto">
-                <button class="btn btn-outline-dark border-0">Wish List <span>(0)</span></button>
-                <button class="btn btn-outline-dark border-0">My Account</button>
-                <button class="btn btn-outline-dark border-0">Language</button>
+                <button className="btn btn-outline-dark border-0">Wish List <span>(0)</span></button>
+                <button className="btn btn-outline-dark border-0">My Account</button>
+                <button className="btn btn-outline-dark border-0">Language</button>
                 <Link class="btn btn-outline-dark border-0"  style={{textDecoration: "none"}} to={"/signin"}>Sign In | up</Link>
             </div>
         </div>

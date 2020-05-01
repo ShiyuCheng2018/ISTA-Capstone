@@ -111,7 +111,7 @@ class SignUp extends Component{
                 {/*validation*/}
                 <div className={"alert alert-danger"} style={{display:error ? "":"none"}}>{error}</div>
                 {/*end of validation*/}
-                {open ? <div className={"jumbotron text-center"}><h2>You create an account successfully !!</h2></div> : ""}
+                {open ? <div className={"jumbotron text-center m-0"}><h2>You create an account successfully !!</h2></div> : ""}
                 {this.signUpForm(email, password, name)}
                 <Footer/>
             </>

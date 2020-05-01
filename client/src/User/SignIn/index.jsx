@@ -47,7 +47,8 @@ class SignIn extends Component{
                 if(data.error){
                     this.setState({error: data.error, loading: false})
                 }else {
-                    authenticate({email, username: name}, ()=>{
+                    const {user_id, username} = data.user_data;
+                    authenticate({user_id, username}, ()=>{
                         this.setState({redirectToReferer: true})
                     })
                 }

@@ -11,7 +11,7 @@ const HomeNav = () => (
     <>
         <div className="container-fluid top-navigation border-bottom">
         <div className="row text-center">
-            <div className="col-md-4 col p-0 ml-auto">
+            <div className="col-md-5 col p-0 ml-auto">
                 <button className="btn btn-outline-dark border-0">Wish List <span>(0)</span></button>
                 <button className="btn btn-outline-dark border-0">My Account</button>
                 <button className="btn btn-outline-dark border-0">Language</button>
@@ -27,7 +27,7 @@ const HomeNav = () => (
                         <>
                         <Link className="btn btn-outline-danger border-0"  style={{textDecoration: "none"}}
                                 onClick={()=>{handleSignOut()}} to={"/home"}>Sign out</Link>
-                        <Link class="btn btn-outline-success border-0"  style={{textDecoration: "none"}} to={"/home"}>{isAuthenticated().username.toUpperCase()}</Link>
+                        <Link class="btn btn-outline-success border-0"  style={{textDecoration: "none"}} to={`/user/dashboard/${isAuthenticated().user_id}`}>{isAuthenticated().username.toUpperCase()}</Link>
                         </>
                     ))
                 }

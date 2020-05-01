@@ -1,0 +1,146 @@
+*{
+   margin: 0;
+    padding: 0;
+}
+
+.single-product_review img{
+    height: 35%;
+}
+
+.single-product_detail{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/*product detail-*/
+.product-detail-img_container, .product-detail-info-container{
+    height: 35rem;
+}
+
+.product-detail-ad-container{
+    height: 5rem;
+}
+
+.product-detail-description-container{
+    height: 20rem;
+}
+
+.product-detail-img-container_big{
+    height: 25rem;
+    width: 100%;
+}
+.product-detail-info-container_bids, .product-detail-info-container_side{
+    height: 32rem;
+}
+
+.product-detail-info-container-user-container:hover{
+    background-color: #c4c4c4;
+}
+
+.product-detail-info-container-user-container-user_name{
+    font-weight: normal;
+}
+
+.product-detail-info-container-user-container-price{
+    font-size: 3rem;
+}
+
+/*deal history*/
+.histories-section .history:hover{
+    background-color: #303030;
+    color:white;
+}
+/*end deal history*/
+
+/*dashboard*/
+.dashboard .tab h3{
+    text-align: center;
+}
+
+.dashboard .tab h6{
+   font-size: 80%;
+    padding-top: .5rem;
+}
+
+.dashboard .tab{
+    opacity: .87;
+    color: white;
+    margin: 0 1rem 0 1rem;
+}
+
+.dashboard .dashboard__brief__1{
+    background-color: #4BA2F8;
+}
+.dashboard .dashboard__brief__2{
+    background-color: #E583ED;
+}
+.dashboard .dashboard__brief__3{
+    background-color: #F2BB65;
+}
+.dashboard .dashboard__brief__4{
+    background-color: #70c16e;
+}
+.dashboard .dashboard__brief__5{
+    background-color: #F84B4B;
+}
+.dashboard-content, .dashboard-content__showCard{
+    padding: 1rem;
+    box-shadow: 0 .2rem .3rem rgba(53, 53, 53, .2);
+}
+.dashboard-content .card{
+    margin: 2rem;
+
+}
+
+.dealHistory-table__items{
+    width: 100%;
+    height: 40vh;
+    overflow: scroll;
+    padding: 0;
+    border-bottom: 1px solid gray;
+}
+
+.bids-table{
+    height: 20vh;
+    overflow: scroll;
+}
+
+.dealHistory-table__bar{
+    background-color: #F5F6FA;
+    text-transform: uppercase;
+}
+
+.dealHistory-table__item{
+    position: relative;
+    border-bottom: 1px solid gray;
+}
+
+.dealHistory-table__item__pic{
+    width: 70px;
+    height: 70px;
+}
+
+.bids-table__item__pic{
+    border-radius: 5px;
+    width: 70px;
+    height: 70px;
+}
+
+.dealHistory-table__item .date{
+    background-color: #69E4E4;
+}
+
+.dealHistory-table__item .date, .dealHistory-table__item  .price{
+    position: absolute;
+    display: inline-block;
+    top: 35px;
+}
+
+.dashboard-content__data a{
+    text-decoration: none;
+}
+
+.bids-table__item{
+    margin-top: 1rem;
+}
+/*end of dashboard*/

@@ -31,7 +31,7 @@ class SignUp extends Component{
         event.preventDefault();
         const {name, email, password} = this.state;
         const user = {
-            name,
+            username: name,
             email,
             password,
             connection: "Username-Password-Authentication",
@@ -39,6 +39,8 @@ class SignUp extends Component{
             client_id: 0,
             method:"create"
         };
+
+        console.log(user);
 
         signUp(user)
             .then(data=>{

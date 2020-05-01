@@ -10,7 +10,7 @@ const HomeNav = () => (
                 <button class="btn btn-outline-dark border-0">Wish List <span>(0)</span></button>
                 <button class="btn btn-outline-dark border-0">My Account</button>
                 <button class="btn btn-outline-dark border-0">Language</button>
-                <a class="btn btn-outline-dark border-0" href="auth/signIn.html" style={{textDecoration: "none"}}>Sign In | up</a>
+                <Link class="btn btn-outline-dark border-0"  style={{textDecoration: "none"}} to={"/signin"}>Sign In | up</Link>
             </div>
         </div>
         </div>

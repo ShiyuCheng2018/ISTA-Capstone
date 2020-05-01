@@ -32,18 +32,18 @@
 
 /*sign in*/
 .signin{
-    position: relative;
+    height: auto;
+    width: auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
-.signin__bg{
-    height: 100%;
-    width: 100%;
+.signin{
     background-image: url("../../assets/img/banners/auth.jpg");
     background-repeat: no-repeat, repeat;
     background-size: cover;
     background-position: center;
     background-color: #131313;
-    opacity: .5;
     z-index: -99;
 }
 
@@ -59,12 +59,10 @@
 .signin .signin__container{
     display: block;
     padding: 1rem;
-    position: absolute;
-    top: 15%;
-    left: 40%;
-    opacity: 1 !important;
     background-color: #141414;
     border-radius: 1rem;
+    margin: auto;
+    opacity: unset;
 }
 
 /*end of sign in*/

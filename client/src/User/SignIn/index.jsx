@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Redirect} from "react-router-dom";
 import Footer from "../../core/Footer";
 import {Link} from "react-router-dom";
-import {signIn} from "../../auth";
+import {authenticate, signIn} from "../../auth";
 
 class SignIn extends Component{
     constructor(){
@@ -22,6 +22,10 @@ class SignIn extends Component{
         this.setState({[name]: event.target.value})
     };
 
+    componentDidMount() {
+        document.title = "MonkeyDock | Signin"
+    }
+
 
     clickSubmit = (event) => {
         event.preventDefault();
@@ -39,10 +43,13 @@ class SignIn extends Component{
 
         signIn(user)
             .then(data=>{
+                console.log(data);
                 if(data.error){
                     this.setState({error: data.error, loading: false})
                 }else {
-                    this.setState({redirectToReferer: true})
+                    authenticate({email, username: name}, ()=>{
+                        this.setState({redirectToReferer: true})
+                    })
                 }
             })
     };
@@ -53,7 +60,7 @@ class SignIn extends Component{
             <div className="signin__container w-25">
                 <div className="row">
                     <div className="col">
-                        <Link to={"/"} className="text-white text-center"
+                        <Link to={"/home"} className="text-white text-center"
                               style={{textDecoration: "none",
                                   fontSize: "2rem",
                                   display: "inline-block",
@@ -98,7 +105,7 @@ class SignIn extends Component{
     render(){
         const {email, password,name, error, redirectToReferer, loading} = this.state;
         if (redirectToReferer){
-            return <Redirect to={'/'}/>
+            return <Redirect to={'/home'}/>
         }
         return (
             <>

@@ -1,22 +1,43 @@
 import React from 'react';
 import {Link, withRouter} from "react-router-dom";
+import {isAuthenticated, signOut} from "../auth";
 
+const handleSignOut = () =>{
+    const data = signOut();
+    console.log(data.message);
+};
 
 const HomeNav = () => (
     <>
-        <div class="container-fluid top-navigation border-bottom">
-        <div class="row text-center">
-            <div class="col-md-4 col p-0 ml-auto">
+        <div className="container-fluid top-navigation border-bottom">
+        <div className="row text-center">
+            <div className="col-md-4 col p-0 ml-auto">
                 <button className="btn btn-outline-dark border-0">Wish List <span>(0)</span></button>
                 <button className="btn btn-outline-dark border-0">My Account</button>
                 <button className="btn btn-outline-dark border-0">Language</button>
-                <Link class="btn btn-outline-dark border-0"  style={{textDecoration: "none"}} to={"/signin"}>Sign In | up</Link>
+
+                {
+                    (! isAuthenticated() && (
+                        <Link class="btn btn-outline-dark border-0"  style={{textDecoration: "none"}} to={"/signin"}>Sign In | up</Link>
+                    ))
+                }
+
+                {
+                    (isAuthenticated() && (
+                        <>
+                        <Link className="btn btn-outline-danger border-0"  style={{textDecoration: "none"}}
+                                onClick={()=>{handleSignOut()}} to={"/home"}>Sign out</Link>
+                        <Link class="btn btn-outline-success border-0"  style={{textDecoration: "none"}} to={"/home"}>{isAuthenticated().username.toUpperCase()}</Link>
+                        </>
+                    ))
+                }
+
             </div>
         </div>
         </div>
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a className="navbar-brand" href="#">MoneyDock</a>
+        <Link className="navbar-brand" to={"/home"}>MoneyDock</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -25,7 +46,7 @@ const HomeNav = () => (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                    <Link className="nav-link" to={"/home"}>Home <span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="#">Link</a>

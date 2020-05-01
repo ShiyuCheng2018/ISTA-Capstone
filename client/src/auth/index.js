@@ -1,5 +1,5 @@
-export  const signIn = user =>{
-    return fetch("http://monkeydock-env.eba-vmgjpawb.us-west-2.elasticbeanstalk.com/v0/login/ ", {
+export const signIn = user =>{
+    return fetch(process.env.REACT_APP_API_URL+"/login/", {
         method: 'POST',
         headers:{
             Accept: 'application/json',
@@ -18,7 +18,7 @@ export  const signIn = user =>{
 
 export const signUp = user =>{
     console.log(user);
-    return fetch('http://monkeydock-env.eba-vmgjpawb.us-west-2.elasticbeanstalk.com/v0/users/', {
+    return fetch(process.env.REACT_APP_API_URL+'/users/', {
         method: 'POST',
         headers:{
             Accept: 'application/json',
@@ -33,4 +33,30 @@ export const signUp = user =>{
         .catch(err=>{
             console.log(err)
         })
+};
+
+export const signOut = () =>{
+    if(typeof window !== "undefined"){
+        localStorage.removeItem("jwt");
+        return {message: "Sign out success!"}
+    }
+};
+
+export const authenticate = (jwt, next) =>{
+    if(typeof window !== "undefined"){
+        localStorage.setItem("jwt", JSON.stringify(jwt));
+        next()
+    }
+};
+
+export const isAuthenticated = ()=>{
+    if(typeof window == "undefined"){
+        return false
+    }
+
+    if(localStorage.getItem("jwt")){
+        return JSON.parse(localStorage.getItem("jwt"))
+    }else {
+        return false
+    }
 };

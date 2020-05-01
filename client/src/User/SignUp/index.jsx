@@ -21,6 +21,10 @@ class SignUp extends Component{
         this.setState({[name]: event.target.value})
     };
 
+    componentDidMount() {
+        document.title = "MonkeyDock | Signup"
+    }
+
 
 
     clickSubmit = (event) => {
@@ -58,7 +62,7 @@ class SignUp extends Component{
             <div className="signin__container w-25">
                 <div className="row">
                     <div className="col">
-                        <Link to={"/"} className="text-white text-center"
+                        <Link to={"/home"} className="text-white text-center"
                            style={{textDecoration: "none",
                                fontSize: "2rem",
                                display: "inline-block",
@@ -111,7 +115,9 @@ class SignUp extends Component{
                 {/*validation*/}
                 <div className={"alert alert-danger"} style={{display:error ? "":"none"}}>{error}</div>
                 {/*end of validation*/}
-                {open ? <div className={"jumbotron text-center m-0"}><h2>You create an account successfully !!</h2></div> : ""}
+                {open ? <div className={"jumbotron text-center m-0"}><h2>You create an account successfully !!
+                    <Link to={"/signin"}> Sign In</Link>
+                </h2></div> : ""}
                 {this.signUpForm(email, password, name)}
                 <Footer/>
             </>

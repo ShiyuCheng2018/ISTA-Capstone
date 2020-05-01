@@ -1,4 +1,4 @@
-# 🛒🛍 ISTA-Capstone MonkeyDock | E-Commerce
+# 🛒 🛍 ISTA-Capstone MonkeyDock | E-Commerce
 
 ## 💻 Frontend: React | Hooks | Router-Dom | Jquery | Bootstrap | Netlify
 ####  Author: 👨🏻‍💻 Shiyu Cheng (React parts | Code refactoring), 👩🏼‍💻 Candace Miller (Prototype Layout | Bootstrap)

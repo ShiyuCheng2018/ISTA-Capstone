@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { withRouter } from "react-router";
 import SideNav from "../../core/SideNav";
 import HeaderBar from "../../core/HeaderBar";
@@ -10,7 +10,7 @@ import DealHistory from "../DealHistory";
 
 const Main = (history) => (
     <>
-        {console.log(history)}
+        {useEffect(() => document.title = `MD | ${isAuthenticated().username.toUpperCase()}`, [])}
         <div className="container-fluid bg-dark text-white">
             <div className={'row'}>
                 <SideNav/>

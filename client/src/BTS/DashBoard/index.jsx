@@ -1,5 +1,7 @@
 import React from 'react';
 import './styles.css';
+import {isAuthenticated} from "../../auth";
+import {Link} from "react-router-dom";
 
 const DashBoard = () => (
 
@@ -118,9 +120,9 @@ const DashBoard = () => (
                                         </div>
                                     </div>
                                 </div>
-                                <a className="single-product_detail_link" href="productDetail.html">
+                                <Link className="single-product_detail_link" to={`/user/${isAuthenticated().user_id}/products/1`}>
                                     <button className="btn btn-primary single-product_detail w-100">Detail</button>
-                                </a>
+                                </Link>
                         </div>
                     </div>
                     <div className="col col-md dashboard-content__data pt-5 px-3">

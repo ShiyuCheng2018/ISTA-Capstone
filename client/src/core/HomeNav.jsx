@@ -1,14 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link, withRouter} from "react-router-dom";
 import {isAuthenticated, signOut} from "../auth";
 
 const handleSignOut = () =>{
     const data = signOut();
+    document.title = "MonkeyDock | Home";
     console.log(data.message);
 };
 
 const HomeNav = () => (
     <>
+        {/*hooks: componentDidMount*/}
+        {   useEffect(()=> {
+                    isAuthenticated().username ?
+                        document.title = `MD | ${isAuthenticated().username.toUpperCase()}` :
+                        document.title = "MonkeyDock | Home"
+            }, [])
+        }
+
         <div className="container-fluid top-navigation border-bottom">
         <div className="row text-center">
             <div className="col-md-5 col p-0 ml-auto">

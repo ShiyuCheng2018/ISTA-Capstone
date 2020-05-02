@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {isAuthenticated} from "../../auth";
 
 const MyProducts = () =>(
 
@@ -105,7 +106,7 @@ const MyProducts = () =>(
 
                                     </div>
                                 </div>
-                                <Link className="single-product_detail_link" to={'/user/productdetail/'}>
+                                <Link className="single-product_detail_link" to={`/user/products/${isAuthenticated().user_id}/1`}>
                                     <button className="btn btn-primary single-product_detail w-100">Detail</button>
                                 </Link>
                         </div>

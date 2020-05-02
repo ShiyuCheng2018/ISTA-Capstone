@@ -26,6 +26,10 @@ const Main = (history) => (
                     }
 
                     {
+                        history.match.url === `/user/products/${isAuthenticated().user_id}/1` &&   <ProductDetail/>
+                    }
+
+                    {
                         history.match.url === `/user/history/${isAuthenticated().user_id}` &&   <DealHistory/>
                     }
 

@@ -10,7 +10,6 @@ class SignIn extends Component{
         this.state = {
             email: "",
             password: "",
-            name:"",
             error: "",
             redirectToReferer: false,
             loading: false
@@ -30,11 +29,10 @@ class SignIn extends Component{
     clickSubmit = (event) => {
         event.preventDefault();
         this.setState({loading: true});
-        const {email, password, name} = this.state;
+        const {email, password} = this.state;
         const user = {
             email,
             password,
-            username: name,
             "grant_type":"password",
             "audience":"Test API",
             "client_id":"iphone123",
@@ -74,10 +72,6 @@ class SignIn extends Component{
                             className="font-weight-bold">Google</span></button>
                         OR
                         <form>
-                            <div className="form-group">
-                                <label htmlFor="name">User name</label>
-                                <input id={'name'} name={'name'}  className={'form-control'} onChange={this.handleChange('name')} value={name}/>
-                            </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email address
                                     <Link className="" to={'/signup'}

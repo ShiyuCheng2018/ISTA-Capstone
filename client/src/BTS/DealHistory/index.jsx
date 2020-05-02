@@ -100,7 +100,6 @@ const DealHistory = () =>(
                                 </div>
                             </div>
                         </li>
-                     >
                         <li className="media history my-4">
                             <div className="media-body">
                                 <div className="row">

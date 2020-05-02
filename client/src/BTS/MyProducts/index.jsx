@@ -5,7 +5,7 @@ import {isAuthenticated} from "../../auth";
 const MyProducts = () =>(
 
     <>
-        <div className="row bg-light text-dark overflow-auto" style={{height: 'auto'}}>
+        <div className="row bg-light text-dark" style={{height: 'auto'}}>
             <div className="col">
                 <div className="row">
                     <div className="col-5">

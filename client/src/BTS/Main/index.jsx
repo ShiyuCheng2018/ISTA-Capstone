@@ -14,7 +14,7 @@ const Main = (history) => (
         <div className="container-fluid bg-dark text-white">
             <div className={'row'}>
                 <SideNav/>
-                <div className="col col-10 bg-white">
+                <div className="col col-10 bg-white overflow-auto"  style={{height: '100vh'}}>
                     <HeaderBar/>
 
                     {

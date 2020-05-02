@@ -5,6 +5,8 @@ import HeaderBar from "../../core/HeaderBar";
 import DashBoard from "../DashBoard";
 import MyProducts from "../MyProducts";
 import {isAuthenticated} from "../../auth";
+import ProductDetail from "../ProductDetail";
+import DealHistory from "../DealHistory";
 
 const Main = (history) => (
     <>
@@ -21,6 +23,10 @@ const Main = (history) => (
 
                     {
                         history.match.url === `/user/products/${isAuthenticated().user_id}` &&   <MyProducts/>
+                    }
+
+                    {
+                        history.match.url === `/user/history/${isAuthenticated().user_id}` &&   <DealHistory/>
                     }
 
                 </div>

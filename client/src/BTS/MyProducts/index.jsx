@@ -106,7 +106,7 @@ const MyProducts = () =>(
 
                                     </div>
                                 </div>
-                                <Link className="single-product_detail_link" to={`/user/products/${isAuthenticated().user_id}/1`}>
+                                <Link className="single-product_detail_link" to={`/user/${isAuthenticated().user_id}/products/1`}>
                                     <button className="btn btn-primary single-product_detail w-100">Detail</button>
                                 </Link>
                         </div>

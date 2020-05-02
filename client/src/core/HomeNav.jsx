@@ -27,7 +27,7 @@ const HomeNav = () => (
                         <>
                         <Link className="btn btn-outline-danger border-0"  style={{textDecoration: "none"}}
                                 onClick={()=>{handleSignOut()}} to={"/home"}>Sign out</Link>
-                        <Link class="btn btn-outline-success border-0"  style={{textDecoration: "none"}} to={`/user/dashboard/${isAuthenticated().user_id}`}>{isAuthenticated().username.toUpperCase()}</Link>
+                        <Link class="btn btn-outline-success border-0"  style={{textDecoration: "none"}} to={`user/${isAuthenticated().user_id}/dashboard`}>{isAuthenticated().username.toUpperCase()}</Link>
                         </>
                     ))
                 }
@@ -68,9 +68,9 @@ const HomeNav = () => (
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <a className="ml-4" href="User/seller/dashBoard.html">
+            <Link className="ml-4" to={`user/${isAuthenticated().user_id}/dashboard`}>
                 <img src="assets/img/avatars/user2.jpg" alt="user" style={{borderRadius: 10,  height: 40, width: 40}}/>
-            </a>
+            </Link>
         </div>
     </nav>
     </>

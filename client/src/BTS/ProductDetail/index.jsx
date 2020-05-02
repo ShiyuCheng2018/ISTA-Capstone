@@ -1,5 +1,7 @@
 import React from "react";
 import OwlCarousel from "react-owl-carousel";
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 import {Link} from "react-router-dom";
 import {isAuthenticated} from "../../auth";
 
@@ -12,7 +14,7 @@ const ProductDetail = () =>(
                 <div className="row">
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb m-0 mx-3">
-                            <li className="breadcrumb-item"><Link to={`/user/products/${isAuthenticated().user_id}`}>Products</Link></li>
+                            <li className="breadcrumb-item"><Link to={`/user/${isAuthenticated().user_id}/products`}>Products</Link></li>
                             <li className="breadcrumb-item active" aria-current="page">Detail</li>
                         </ol>
                     </nav>

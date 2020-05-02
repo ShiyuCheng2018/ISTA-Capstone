@@ -13,13 +13,13 @@ const MainRouter = () => (
             <Route exact path={'/home'} component={Index}/>
             <Route exact path={'/signin'} component={SignIn}/>
             <Route exact path={'/signup'} component={SignUp}/>
-            <Route exact path={'/user/dashboard/:userId'} component={Main}/>
-            <Route exact path={'/user/products/:userId'} component={Main}/>
-            <Route exact path={'/user/products/:userId/:productId'} component={Main}/>
-            <Route exact path={'/user/history/:userId'} component={Main}/>
-            <Route exact path={'/user/messages/:userId'} component={Main}/>
-            <Route exact path={'/user/profile/:userId'} component={Main}/>
-            <Route exact path={'/user/setting/:userId'} component={Main}/>
+            <Route exact path={'/user/:userId/dashboard'} component={Main}/>
+            <Route exact path={'/user/:userId/products'} component={Main}/>
+            <Route exact path={'/user/:userId/products/:productId'} component={Main}/>
+            <Route exact path={'/user/:userId/history'} component={Main}/>
+            <Route exact path={'/user/:userId/messages'} component={Main}/>
+            <Route exact path={'/user/:userId/profile'} component={Main}/>
+            <Route exact path={'/user/:userId/setting'} component={Main}/>
         </Switch>
     </div>
 );

@@ -10,7 +10,7 @@ import DealHistory from "../DealHistory";
 
 const Main = (history) => (
     <>
-        {console.log(history.match.url)}
+        {console.log(history)}
         <div className="container-fluid bg-dark text-white">
             <div className={'row'}>
                 <SideNav/>
@@ -18,19 +18,19 @@ const Main = (history) => (
                     <HeaderBar/>
 
                     {
-                        history.match.url === `/user/dashboard/${isAuthenticated().user_id}` &&   <DashBoard/>
+                        history.match.url === `/user/${isAuthenticated().user_id}/dashboard` &&   <DashBoard/>
                     }
 
                     {
-                        history.match.url === `/user/products/${isAuthenticated().user_id}` &&   <MyProducts/>
+                        history.match.url === `/user/${isAuthenticated().user_id}/products` &&   <MyProducts/>
                     }
 
                     {
-                        history.match.url === `/user/products/${isAuthenticated().user_id}/1` &&   <ProductDetail/>
+                        history.match.url === `/user/${isAuthenticated().user_id}/products/1` &&   <ProductDetail/>
                     }
 
                     {
-                        history.match.url === `/user/history/${isAuthenticated().user_id}` &&   <DealHistory/>
+                        history.match.url === `/user/${isAuthenticated().user_id}/history` &&   <DealHistory/>
                     }
 
                 </div>

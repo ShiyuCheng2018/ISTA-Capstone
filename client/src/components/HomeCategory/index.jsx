@@ -1,4 +1,7 @@
 import React from "react";
+import OwlCarousel from "react-owl-carousel";
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const HomeCategory = () =>(
 
@@ -57,12 +60,18 @@ const HomeCategory = () =>(
                 <div className="col"></div>
                 <div className="col col-md-8 ">
                     <div className="row">
-                        <div className="owl-carousel owl-theme banner-container_carousel">
+
+                        <OwlCarousel
+                            loop
+                            margin={10}
+                            items={1}
+                            autoPlay
+                            className="owl-theme banner-container_carousel">
                             <div className="item"><img src="assets/img/banners/slider-01-880x500.jpg"
                                                        alt="product small"/></div>
                             <div className="item"><img src="assets/img/banners/slider-02-880x500.jpg"
                                                        alt="product small"/></div>
-                        </div>
+                        </OwlCarousel>
                     </div>
                 </div>
             </div>

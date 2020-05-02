@@ -24,7 +24,7 @@ const DealHistory = () =>(
                             <div className="media-body">
                                 <div className="row">
                                     <div className="col col-2">
-                                        <Link to={`/user/products/${isAuthenticated().user_id}/1`}>
+                                        <Link to={`/user/${isAuthenticated().user_id}/products/1`}>
                                             <img src="../../assets/img/products/product_1.jpg"
                                                  className="mr-3 h-100 w-100" alt="..."/>
                                         </Link>

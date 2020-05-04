@@ -23,8 +23,22 @@ function HomeNav(){
                 if(isAuthenticated()){
                     return (
                     <Link className="ml-4" to={`user/${isAuthenticated().basic.user_id}/dashboard`}>
-                        <img src={process.env.REACT_APP_API_STRAPI+`${isAuthenticated().basic.profile_img.url}`} alt="user"
-                             style={{borderRadius: 10, height: 40, width: 40}}/>
+
+
+                        {
+                            ! isAuthenticated().basic.profile_img?
+                                <img src={process.env.REACT_APP_API_STRAPI+`${isAuthenticated().basic.default_profile}`}
+                                     style={{borderRadius: 10, height: 40, width: 40}} alt="user"
+                                /> :
+                                <img src={process.env.REACT_APP_API_STRAPI+`${isAuthenticated().basic.profile_img.url}`}
+                                     style={{borderRadius: 10, height: 40, width: 40}} alt="user"
+                                />
+                        }
+
+                        {/*<img src={process.env.REACT_APP_API_STRAPI+`${isAuthenticated().basic.profile_img.url}`} alt="user"*/}
+                        {/*     style={{borderRadius: 10, height: 40, width: 40}}/>*/}
+
+
                     </Link>
                     )
                 }else {

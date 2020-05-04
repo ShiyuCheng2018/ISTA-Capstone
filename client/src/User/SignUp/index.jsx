@@ -34,10 +34,6 @@ class SignUp extends Component{
             username: name,
             email,
             password,
-            connection: "Username-Password-Authentication",
-            user_type:"personal_user",
-            client_id: 0,
-            method:"create"
         };
 
         console.log(user);

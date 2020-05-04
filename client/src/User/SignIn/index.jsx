@@ -44,7 +44,7 @@ class SignIn extends Component{
                     const jwt = data.jwt;
                     const {id, username, email, profile_img}= data.user;
                     const basic = {
-                        user_id: id, username, email, profile_img
+                        user_id: id, username, email, profile_img, default_profile: "/uploads/item_default.jpg_670c9d9c9b.jpeg"
                     };
 
                     authenticate({jwt,basic}, ()=>{

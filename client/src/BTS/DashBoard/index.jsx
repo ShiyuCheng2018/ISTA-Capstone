@@ -48,7 +48,7 @@ const DashBoard = (props) => {
 
                 <div className="row dashboard-content">
                     <div className="col col-md-5 dashboard-content__showCard" style={{height: 'auto'}}>
-                        {!products.length > 0 ? <h2>You do not have any products"</h2>:
+                        {!products.length > 0 ? <h3>You do not have any products to show....</h3>:
                             <div className="card" style={{height: '70%'}}>
 
                                 {

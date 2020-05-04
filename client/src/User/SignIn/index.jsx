@@ -8,7 +8,7 @@ class SignIn extends Component{
     constructor(){
         super();
         this.state = {
-            email: "",
+            identifier: "",
             password: "",
             error: "",
             redirectToReferer: false,
@@ -29,14 +29,10 @@ class SignIn extends Component{
     clickSubmit = (event) => {
         event.preventDefault();
         this.setState({loading: true});
-        const {email, password} = this.state;
+        const {identifier, password} = this.state;
         const user = {
-            email,
+            identifier,
             password,
-            "grant_type":"password",
-            "audience":"Test API",
-            "client_id":"iphone123",
-            "client_secret":"1234"
         };
 
         signIn(user)
@@ -45,15 +41,20 @@ class SignIn extends Component{
                 if(data.error){
                     this.setState({error: data.error, loading: false})
                 }else {
-                    const {user_id, username} = data.user_data;
-                    authenticate({user_id, username}, ()=>{
+                    const jwt = data.jwt;
+                    const {id, username, email, profile_img}= data.user;
+                    const basic = {
+                        id, username, email, profile_img
+                    };
+
+                    authenticate({jwt,basic}, ()=>{
                         this.setState({redirectToReferer: true})
                     })
                 }
             })
     };
 
-    signInForm = (email, password, name)=>(
+    signInForm = (identifier, password)=>(
         <div className="container-fluid signin">
             <div className="signin__bg"></div>
             <div className="signin__container w-25">
@@ -73,11 +74,11 @@ class SignIn extends Component{
                         OR
                         <form>
                             <div className="form-group">
-                                <label htmlFor="email">Email address
+                                <label htmlFor="identifier">Your user name or E-mail
                                     <Link className="" to={'/signup'}
-                                          style={{fontSize: 10, display: "inline-block", transform: 'translateX(99%)'}}>Don't
+                                          style={{fontSize: 10, display: "inline-block", transform: 'translateX(20%)'}}>Don't
                                         have an account?</Link></label>
-                                <input id={'email'} name={'email'} type={'email'} className={'form-control'} onChange={this.handleChange('email')}  aria-describedby="emailHelp" value={email}/>
+                                <input id={'identifier'} name={'identifier'} className={'form-control'} onChange={this.handleChange('identifier')} value={identifier}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="password">Password</label>

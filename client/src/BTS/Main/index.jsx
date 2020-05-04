@@ -10,7 +10,7 @@ import DealHistory from "../DealHistory";
 
 const Main = (history) => (
     <>
-        {useEffect(() => document.title = `MD | ${isAuthenticated().username.toUpperCase()}`, [])}
+        {useEffect(() => document.title = `MD | ${isAuthenticated().basic.username.toUpperCase()}`, [])}
         <div className="container-fluid bg-dark text-white">
             <div className={'row'}>
                 <SideNav/>

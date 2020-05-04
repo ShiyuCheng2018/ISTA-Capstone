@@ -18,19 +18,19 @@ const Main = (history) => (
                     <HeaderBar/>
 
                     {
-                        history.match.url === `/user/${isAuthenticated().user_id}/dashboard` &&   <DashBoard/>
+                        history.match.url === `/user/${isAuthenticated().basic.user_id}/dashboard` &&   <DashBoard/>
                     }
 
                     {
-                        history.match.url === `/user/${isAuthenticated().user_id}/products` &&   <MyProducts/>
+                        history.match.url === `/user/${isAuthenticated().basic.user_id}/products` &&   <MyProducts/>
                     }
 
                     {
-                        history.match.url === `/user/${isAuthenticated().user_id}/products/1` &&   <ProductDetail/>
+                        history.match.url === `/user/${isAuthenticated().basic.user_id}/products/1` &&   <ProductDetail/>
                     }
 
                     {
-                        history.match.url === `/user/${isAuthenticated().user_id}/history` &&   <DealHistory/>
+                        history.match.url === `/user/${isAuthenticated().basic.user_id}/history` &&   <DealHistory/>
                     }
 
                 </div>

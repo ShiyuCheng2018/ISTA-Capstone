@@ -22,7 +22,7 @@ function HomeNav(){
         function getProfilePic(){
                 if(isAuthenticated()){
                     return (
-                    <Link className="ml-4" to={`user/${isAuthenticated().basic.id}/dashboard`}>
+                    <Link className="ml-4" to={`user/${isAuthenticated().basic.user_id}/dashboard`}>
                         <img src={process.env.REACT_APP_API_STRAPI+`${isAuthenticated().basic.profile_img.url}`} alt="user"
                              style={{borderRadius: 10, height: 40, width: 40}}/>
                     </Link>
@@ -61,7 +61,7 @@ function HomeNav(){
                                           handleSignOut()
                                       }} to={"/home"}>Sign out</Link>
                                 <Link class="btn btn-outline-success border-0" style={{textDecoration: "none"}}
-                                      to={`user/${isAuthenticated().basic.id}/dashboard`}>{isAuthenticated().basic.username.toUpperCase()}</Link>
+                                      to={`user/${isAuthenticated().basic.user_id}/dashboard`}>{isAuthenticated().basic.username.toUpperCase()}</Link>
                             </>
                         ))
                     }

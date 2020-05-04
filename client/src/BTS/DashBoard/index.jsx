@@ -3,9 +3,14 @@ import './styles.css';
 import {isAuthenticated} from "../../auth";
 import {Link} from "react-router-dom";
 
-const DashBoard = () => (
+const DashBoard = (props) => {
 
-    <>
+    const {products} = props;
+     console.log(products[0]);
+
+    const num = Math.floor(Math.random() * (products.length-1));
+
+    return (<>
         <div className="row bg-light text-dark overflow-auto" style={{height: 'auto'}}>
             <div className="col">
                 <div className="row">
@@ -43,87 +48,101 @@ const DashBoard = () => (
 
                 <div className="row dashboard-content">
                     <div className="col col-md-5 dashboard-content__showCard" style={{height: 'auto'}}>
-                        <div className="card" style={{height: '70%'}}>
-                            <img src="../../assets/img/products/product_1.jpg" className="card-img-top"
-                                 alt="product_review" />
-                                <div className="card-body">
-                                    <div className="row px-3">
-                                        <h5 className="card-title ">iPhone 4s</h5>
-                                        <h5 className="card-title ml-auto text-uppercase">Goal: <span
-                                            className="text-success">110.00 $</span></h5>
+                        {!products.length > 0 ? <h2>You do not have any products"</h2>:
+                            <div className="card" style={{height: '70%'}}>
+
+                                {
+                                    products[0].picture[0] === undefined?
+                                        <img src = "assets/img/products/default.jpg" alt="product_review"
+                                             className="card-img-top"
+                                             onError={i => (i.target.src = "assets/img/products/default.jpg")}
+                                        /> :
+                                        <img src={process.env.REACT_APP_API_STRAPI+`${products[num].picture[0].url}`}
+                                             alt="product_review"
+                                             className="card-img-top"
+                                             onError={i => (i.target.src = "assets/img/products/default.jpg")}
+                                        />
+                                }
+
+                            <div className="card-body">
+                                <div className="row px-3">
+                                    <h5 className="card-title ">{products[num].name}</h5>
+                                    <h5 className="card-title ml-auto text-uppercase">Goal: <span
+                                        className="text-success">{products[num].goal_price}</span></h5>
+                                </div>
+                                <hr/>
+                                <div className="card-text overflow-auto" style={{height: '70%'}}>
+                                    <div className="row m-2 single-comment text-center">
+                                        <div className="col-6">
+                                            <h5>Nihao:</h5>
+                                        </div>
+                                        <div className="col text-success">
+                                            150.00 $
+                                        </div>
                                     </div>
-                                    <hr/>
-                                    <div className="card-text overflow-auto" style={{height: '70%'}}>
-                                        <div className="row m-2 single-comment text-center">
-                                            <div className="col-6">
-                                                <h5>Nihao:</h5>
-                                            </div>
-                                            <div className="col text-success">
-                                                150.00 $
-                                            </div>
+                                    <div className="row m-2 single-comment text-center">
+                                        <div className="col-6">
+                                            <h5>user_2:</h5>
                                         </div>
-                                        <div className="row m-2 single-comment text-center">
-                                            <div className="col-6">
-                                                <h5>user_2:</h5>
-                                            </div>
-                                            <div className="col text-success">
-                                                150.00 $
-                                            </div>
+                                        <div className="col text-success">
+                                            150.00 $
                                         </div>
-                                        <div className="row m-2 single-comment text-center">
-                                            <div className="col-6">
-                                                <h5>Nihao:</h5>
-                                            </div>
-                                            <div className="col text-success">
-                                                143.00 $
-                                            </div>
+                                    </div>
+                                    <div className="row m-2 single-comment text-center">
+                                        <div className="col-6">
+                                            <h5>Nihao:</h5>
                                         </div>
-                                        <div className="row m-2 single-comment text-center">
-                                            <div className="col-6">
-                                                <h5>user_2:</h5>
-                                            </div>
-                                            <div className="col text-success">
-                                                113.56 $
-                                            </div>
+                                        <div className="col text-success">
+                                            143.00 $
                                         </div>
-                                        <div className="row m-2 single-comment text-center">
-                                            <div className="col-6">
-                                                <h5>Nihao:</h5>
-                                            </div>
-                                            <div className="col text-warning">
-                                                100.00 $
-                                            </div>
+                                    </div>
+                                    <div className="row m-2 single-comment text-center">
+                                        <div className="col-6">
+                                            <h5>user_2:</h5>
                                         </div>
-                                        <div className="row m-2 single-comment text-center">
-                                            <div className="col-6">
-                                                <h5>user_2:</h5>
-                                            </div>
-                                            <div className="col text-success text-warning">
-                                                98.34 $
-                                            </div>
+                                        <div className="col text-success">
+                                            113.56 $
                                         </div>
-                                        <div className="row m-2 single-comment text-center">
-                                            <div className="col-6">
-                                                <h5>Nihao:</h5>
-                                            </div>
-                                            <div className="col text-warning">
-                                                67.84 $
-                                            </div>
+                                    </div>
+                                    <div className="row m-2 single-comment text-center">
+                                        <div className="col-6">
+                                            <h5>Nihao:</h5>
                                         </div>
-                                        <div className="row m-2 single-comment text-center">
-                                            <div className="col-6">
-                                                <h5>user_2:</h5>
-                                            </div>
-                                            <div className="col text-warning">
-                                                63.40 $
-                                            </div>
+                                        <div className="col text-warning">
+                                            100.00 $
+                                        </div>
+                                    </div>
+                                    <div className="row m-2 single-comment text-center">
+                                        <div className="col-6">
+                                            <h5>user_2:</h5>
+                                        </div>
+                                        <div className="col text-success text-warning">
+                                            98.34 $
+                                        </div>
+                                    </div>
+                                    <div className="row m-2 single-comment text-center">
+                                        <div className="col-6">
+                                            <h5>Nihao:</h5>
+                                        </div>
+                                        <div className="col text-warning">
+                                            67.84 $
+                                        </div>
+                                    </div>
+                                    <div className="row m-2 single-comment text-center">
+                                        <div className="col-6">
+                                            <h5>user_2:</h5>
+                                        </div>
+                                        <div className="col text-warning">
+                                            63.40 $
                                         </div>
                                     </div>
                                 </div>
-                                <Link className="single-product_detail_link" to={`/user/${isAuthenticated().basic.user_id}/products/1`}>
-                                    <button className="btn btn-primary single-product_detail w-100">Detail</button>
-                                </Link>
-                        </div>
+                            </div>
+                            <Link className="single-product_detail_link"
+                                  to={`/user/${isAuthenticated().basic.user_id}/products/1`}>
+                                <button className="btn btn-primary single-product_detail w-100">Detail</button>
+                            </Link>
+                        </div>}
                     </div>
                     <div className="col col-md dashboard-content__data pt-5 px-3">
 
@@ -293,7 +312,7 @@ const DashBoard = () => (
                 </div>
             </div>
         </div>
-    </>
-);
+    </>)
+};
 
 export default DashBoard;

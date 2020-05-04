@@ -9,7 +9,8 @@ class Index extends Component {
     constructor(){
         super();
         this.state={
-            products: []
+            products: [],
+            item_load: true
         }
     }
 
@@ -20,7 +21,7 @@ class Index extends Component {
             if(data.err){
                 console.log(data.err)
             }else {
-                this.setState({products: data})
+                this.setState({products: data, item_load:false})
             }
         }).catch(err => {
             console.log(err);
@@ -32,7 +33,7 @@ class Index extends Component {
             <>
                 <HomeNav/>
                 < HomeCategory/>
-                < HomeProducts  products = {this.state.products}/>
+                < HomeProducts  products = {this.state.products} item_loading = {this.state.item_load}/>
             </>
         )
     }

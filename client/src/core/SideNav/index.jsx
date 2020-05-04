@@ -24,8 +24,11 @@ const SideNav = () =>(
                         <Link to={`/user/${isAuthenticated().basic.user_id}/setting`} className="btn btn-dark mx-auto p-3 w-100">Setting</Link>
                 </div>
             </div>
+            <div className="row my-3">
+                <Link to={`/`} path={'/'} className="btn btn-dark mx-auto p-3 w-100">Monkey Dock</Link>
+            </div>
         </div>
     </>
-)
+);
 
 export default SideNav;

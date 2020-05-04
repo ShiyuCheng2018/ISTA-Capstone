@@ -64,7 +64,7 @@ const MyProducts = () => {
                 <div className="row py-2">
 
                     {
-                        !products ? "You don't have any products yet..Please add your products" : (toMap(products))
+                        !products.length>0 ? <h2 className={"col"}>You don't have any products yet..Please add your products....</h2> : (toMap(products))
                     }
 
                     {/*    <div className="col col-4 py-3 single-product_review">*/}

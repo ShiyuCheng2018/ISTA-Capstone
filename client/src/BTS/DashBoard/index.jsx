@@ -202,7 +202,7 @@ const DashBoard = () => (
                                 </div>
                                 <div className="row">
                                     <div className="col-3 mx-auto">
-                                        <a href="dealHistory.html">Show More</a>
+                                        <Link to={`/user/${isAuthenticated().basic.user_id}/history`}>Show More</Link>
                                     </div>
                                 </div>
                             </div>

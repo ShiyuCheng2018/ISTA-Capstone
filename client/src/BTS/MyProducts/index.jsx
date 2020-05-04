@@ -3,9 +3,13 @@ import {Link} from "react-router-dom";
 import {isAuthenticated} from "../../auth";
 import Card from "../../components/Card";
 import {fetchUser} from "../../api/users";
+import {Form} from "reactstrap";
 
 
 const MyProducts = () => {
+
+
+
 
     function toMap(products){
         return products.map((product, i) => {
@@ -163,8 +167,74 @@ const MyProducts = () => {
                 </div>
             </div>
         </div>
+
+
+        <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">Add Product</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div className="modal-body">
+
+
+                        <form className={"text-dark"}>
+                            <div className="form-group">
+                                <label htmlFor="name">name</label>
+                                <input className="form-control" id="name" placeholder="What you want to sell?"/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="condition">Condition</label>
+                                <select className="form-control" id="condition">
+                                    <option>Almost New</option>
+                                    <option>Great</option>
+                                    <option>Good</option>
+                                    <option>Noticeable</option>
+                                    <option>Need to fix</option>
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="Category">Category</label>
+                                <select className="form-control" id="Category">
+                                    <option>Desktop</option>
+                                    <option>Vehicle</option>
+                                    <option>Mobile</option>
+                                    <option>Laptop</option>
+                                    <option>Bike</option>
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="price">Goal Price</label>
+                                <input type="number" id="price" className="ml-3"/> $
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="qty">Quantity</label>
+                                <input type="number" id="qty" className="ml-3"/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlTextarea1">Description</label>
+                                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"
+                                placeholder={"Please describe your product..."}
+                                />
+                            </div>
+                        </form>
+
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </>)
 
-}
+};
 
 export default MyProducts;

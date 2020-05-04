@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import {Link, withRouter} from "react-router-dom";
 import {isAuthenticated, signOut} from "../auth";
 
-const handleSignOut = () =>{
+const handleSignOut = (e) =>{
+    e.preventDefault();
     const data = signOut();
     document.title = "MonkeyDock | Home";
     console.log(data.message);

@@ -4,6 +4,8 @@ import HomeCategory from "../../components/HomeCategory";
 import HomeProducts from "../../components/HomeProductShow";
 import {fetchProducts} from "../../api/products";
 
+
+
 class Index extends Component {
 
     constructor(){

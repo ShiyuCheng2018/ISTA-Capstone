@@ -53,9 +53,8 @@ const DashBoard = (props) => {
 
                                 {
                                     products[0].picture[0] === undefined?
-                                        <img src = "assets/img/products/default.jpg" alt="product_review"
+                                        <img src = {`${process.env.REACT_APP_API_STRAPI}/uploads/item_default.jpg_670c9d9c9b.jpeg`} alt="product_review"
                                              className="card-img-top"
-                                             onError={i => (i.target.src = "assets/img/products/default.jpg")}
                                         /> :
                                         <img src={process.env.REACT_APP_API_STRAPI+`${products[num].picture[0].url}`}
                                              alt="product_review"

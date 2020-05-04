@@ -8,7 +8,6 @@ import {isAuthenticated} from "../../auth";
 
 const toMap = (products) =>{
     return products.map((product, i) => {
-        console.log(product.picture[0] === undefined? console.log("bad") : console.log(product.picture[0].name));
         return(
             <>
                 <a href="User/seller/productDetail.html" key={i} className="m-3 card p-0" style={{height: 'auto', width:"250px"}}>
